@@ -41,20 +41,35 @@
 </head>
 
 <body>
-    <iframe id="container-image" src="assets/imgs/7662952_3742411.jpg" frameborder="1" width="400px"
-        height="400px"></iframe>
-    <!-- <img src="assets/imgs/7662952_3742411.jpg" alt=""> -->
-
-    <div class="opcoes">
-        <div class="opcao" onclick="mudarBackground('black')" >1</div>
-        <div class="opcao" onclick="mudarBackground('green')" >2</div>
-        <div class="opcao" onclick="mudarBackground('orange')" >3</div>
-        <div class="opcao" onclick="mudarBackground('red')" >4</div>
-        <div class="opcao" onclick="mudarBackground('yellow')" >5</div>
+    <div>
+        <iframe id="container-image" src="assets/imgs/7662952_3742411.jpg" frameborder="1" width="400px"
+            height="400px">
+        </iframe>
+        <p id="areatexto">mateus</p>
     </div>
+    <!-- <img src="assets/imgs/7662952_3742411.jpg" alt=""> -->
+    <details>
+        <summary>Fundos</summary>
+        <div class="opcoes">
+            <div class="opcao" onclick="mudarBackground('black')">1</div>
+            <div class="opcao" onclick="mudarBackground('green')">2</div>
+            <div class="opcao" onclick="mudarBackground('orange')">3</div>
+            <div class="opcao" onclick="mudarBackground('red')">4</div>
+            <div class="opcao" onclick="mudarBackground('yellow')">5</div>
+        </div>
+    </details>
+    <details>
+        <summary>Texto</summary>
+        <form>
+            <label for="inome">Nome</label>
+            <input type="text" name="nome" id="inome">
+            <input type="button" value="Escrever" onclick="escreverNaImage()">
+        </form>
+    </details>
 </body>
 <script>
     const containerImage = document.querySelector("#container-image")
+    const inputTexto = document.querySelector("#inome").value
     const imagens = {
         "black": "assets/imgs/black.jpg",
         "green": "assets/imgs/green.jpg",
@@ -62,11 +77,14 @@
         "red": "assets/imgs/red.jpg",
         "yellow": "assets/imgs/yellow.jpg",
     }
-    function mudarBackground(img){
+    function mudarBackground(img) {
         containerImage.src = imagens[img]
         console.log(imagens.img)
     }
+    function escreverNaImage() {
+        console.log(inputTexto)
 
+    }
 
 </script>
 
